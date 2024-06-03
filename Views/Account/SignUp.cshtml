@@ -1,0 +1,49 @@
+﻿@model SignUpViewModel
+@{
+    ViewData["Title"] = "SignIn";
+    Layout = "~/Views/Shared/_LayoutS.cshtml";
+}
+<div class="banner-box">
+    <h2>Sign Up</h2>
+    <form action="#">
+        <div class="input_box">
+            <input type="text" asp-for="Fname" required>
+            <label>First Name</label>
+			<span asp-validation-for="Fname"></span>
+        </div>
+        <div class="input_box">
+            <input type="text" asp-for="Lname" required>
+            <label>Last Name</label>
+			<span asp-validation-for="Lname"></span>
+        </div>
+        <div class="input_box">
+            <input type="email" asp-for="Email" required>
+            <label>Email</label>
+					<span asp-validation-for="Email"></span>
+        </div>
+        <div class="input_box">
+            <input type="password" asp-for="Password" required>
+            <label>Password</label>
+					<span asp-validation-for="Password"></span>
+        </div>
+        <div class="input_box">
+            <input type="password" asp-for="ConfirmPassword" required>
+            <label>Confirm Password</label>
+					<span asp-validation-for="ConfirmPassword"></span>
+        </div>
+        <div class="remember-forget">
+            <label><input type="checkbox" />I Agree to the terms & conditions </label>
+        </div>
+        <a asp-controller="Home" asp-action="Dashboard"><button class="button">Submit</button></a>
+        <div class="login-signup">
+            <p>Do you have an account?<a asp-controller="Account" asp-action="LogIn">Log In</a></p>
+        </div>
+    </form>
+</div>
+
+
+
+<link rel="stylesheet" href="~/css/style.css">
+@section ValidationSection {
+    <partial name="_ValidationScriptsPartial" /></partial>
+}

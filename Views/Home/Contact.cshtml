@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Contact us";
+    Layout = "~/Views/Shared/_LayoutS.cshtml";
+}
+
+    <div class="banner-box">
+        <h2>Contact Us</h2>
+            <form asp-controller="Home" asp-action="Contact">
+                <div class="input_box">
+                    <input type="text" required>
+                    <label>Name</label>
+                </div>
+                <div class="input_box">
+                    <input type="text" required>
+                    <label>Email</label>
+                </div>
+                <div class="input_box">
+                    <textarea rows="5" required></textarea>
+                    <label>Your Message</label>
+                </div>
+                <a asp-controller="Home" asp-action="Contact"><button class="button">Submit</button></a>
+            </form>
+
+    </div>
+
+<link rel="stylesheet" href="~/css/style.css">

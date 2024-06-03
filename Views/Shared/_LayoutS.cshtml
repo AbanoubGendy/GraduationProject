@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="/logo2.png" />
+
+</head>
+<body>
+
+    <div id="Loader"></div>
+
+    <div class="banner">
+        <div class="navbar">
+            <img src="/imgs/logo.png" href="~/Home/StartUp" class="logo">
+            <ul>
+                <li><a asp-controller="Home" asp-action="Cover">Home</a></li>
+                <li><a asp-controller ="Home" asp-action="About">About</a></li>
+                <li><a asp-controller="Home" asp-action="Team">Our Team</a></li>
+                <li><a asp-controller="Home" asp-action="Contact">Contact us</a></li>
+            </ul>
+
+        </div>@RenderBody()
+       
+    </div>
+
+
+    <script>
+
+        var loader = document.getElementById("Loader");
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+        })
+
+    </script>
+
+</body>
+</html>
+
+
+<script src="~/lib/jquery-validation/dist/additional-methods.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+@await RenderSectionAsync("ValidationSection", required: false)

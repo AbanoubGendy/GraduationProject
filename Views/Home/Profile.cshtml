@@ -1,0 +1,94 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid p-0">
+
+	<div class="mb-3">
+		<h1 class="h3 d-inline align-middle">Profile</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-xl-3">
+			<div class="card mb-3">
+				<div class="card-header">
+					<h5 class="card-title mb-0">Profile Details</h5>
+				</div>
+				<div class="card-body text-center">
+					<img src="/imgs/profilephoto.jpg" alt="Gendy" class="img-fluid rounded-circle mb-2" width="128" height="128">
+					<h5 class="card-title mb-0">Abanoub Gendy</h5>
+					<div class="text-muted mb-2">Admin</div>
+
+					<div>
+						<a class="btn btn-primary btn-sm" href="#">Facebook</a>
+						<a class="btn btn-primary btn-sm" href="#"> LinkedIn</a>
+						<a class="btn btn-primary btn-sm" href="http://Wa.me/+201287434695">What's app</a>
+					</div>
+
+				</div>
+				<hr class="my-0">
+				<div class="card-body">
+					<h5 class="h6 card-title">Skills</h5>
+					<a href="#" class="badge bg-primary me-1 my-1">HTML</a>
+					<a href="#" class="badge bg-primary me-1 my-1">ASP.NET Core</a>
+					<a href="#" class="badge bg-primary me-1 my-1">API</a>
+					<a href="#" class="badge bg-primary me-1 my-1">MVC</a>
+					<a href="#" class="badge bg-primary me-1 my-1">CSS</a>
+				</div>
+				<hr class="my-0">
+				<div class="card-body">
+					<h5 class="h6 card-title">About</h5>
+					<ul class="list-unstyled mb-0">
+						<li class="mb-1"><span data-feather="home" class="feather-sm me-1"></span> Lives in <a href="#">Maadi ,Cairo</a></li>
+						<li class="mb-1"><span data-feather="briefcase" class="feather-sm me-1"></span> Works at <a href="#">GitHub</a></li>
+						<li class="mb-1"><span data-feather="map-pin" class="feather-sm me-1"></span> From <a href="#">Egypt</a></li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="col-md-8 col-xl-9">
+			<div class="card">
+				<div class="card-header">
+
+					<h5 class="card-title mb-0">Activities</h5>
+				</div>
+				<div class="card-body h-100">
+					<div class="row">
+						<div class="col-22">
+							<div class="form-group">
+								<label asp-for="Name"></label>
+								<input asp-for="Name" class="form-control" readonly />
+							</div>
+							<div class="form-group">
+								<label asp-for="Age"></label>
+								<input asp-for="Age" class="form-control" readonly />
+							</div>
+							<div class="form-group">
+								<label asp-for="Email"></label>
+								<input asp-for="Email" class="form-control" readonly />
+							</div>
+
+							<div class="form-group">
+								<label asp-for="Address"></label>
+								<input asp-for="Address" class="form-control" readonly />
+							</div>
+
+							<div class="form-group">
+								<label asp-for="PhoneNumber"></label>
+								<input asp-for="PhoneNumber" class="form-control" readonly />
+							</div>
+
+
+							
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

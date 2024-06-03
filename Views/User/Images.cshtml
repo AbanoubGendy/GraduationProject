@@ -1,0 +1,33 @@
+﻿@model IEnumerable<UserViewModel>
+@{
+    ViewData["Title"] = "Images";
+}
+<h1>Images</h1>
+@if (Model.Count() > 0)
+{
+<table class="mt-4 table table-striped  table-hover ">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(e => e.Image)</th>
+            <th>@Html.DisplayNameFor(e => e.Name)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/Files/Images/@user.ImageName" width="120" height="120" class="img-fluid "/>
+                </td>
+                <td>@user.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+else
+{
+    <div>
+        <h3 class="alert alert-warning">There Is No users :(</h3>
+    </div>
+}

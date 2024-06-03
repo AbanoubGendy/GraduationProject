@@ -1,0 +1,16 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>User Details</h1>
+<form>
+   
+    <partial name="PartialView/ReadOnlyinputPartial"></partial>
+    <br />
+    <a asp-action="Delete" asp-route-Id ="@Model.Id" class="btn btn-danger">Delete</a> |
+    <a asp-action="Update" asp-route-Id="@Model.Id" class="btn btn-success">Update</a> |
+    <a asp-controller="User" asp-action="Images" asp-route-Id="@Model.Id" class="btn btn-dark">Images</a> |
+    <a asp-action="Index" class="btn btn-light">Go Back</a>
+</form>
+

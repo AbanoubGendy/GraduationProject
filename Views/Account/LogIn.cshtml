@@ -1,0 +1,43 @@
+﻿@model LogInViewModel;
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayoutS.cshtml";
+}
+
+
+<div class="banner-box">
+    <h2>Log In</h2>
+    <form asp-controller="Home" asp-action="Dashboard">
+        	<div asp-validation-summary="All"></div>
+        <div class="input_box">
+            <input class="text email" asp-for="Email" required>
+            <label>Email</label>
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="input_box">
+            <input type="password" asp-for="Password" required>
+            <label>Password</label>
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class="remember-forget">
+            <label><input type="checkbox" />Remember me</label>
+            <a asp-controller="Account" asp-action="ForgetPassword">Forget password</a>
+        </div>
+    <a asp-controller="Home" asp-action="Dashboard"><button class="button">Submit</button></a>
+    <div class="login-signup">
+        <p>Don't have an account?<a asp-controller="Account" asp-action="SignUp">Sign Up</a></p>
+    </div>
+    </form>
+
+</div>
+
+
+
+
+<link rel="stylesheet" href="~/css/style.css">
+
+
+@section ValidationSection {
+    <partial name="_ValidationScriptsPartial" />
+}
+

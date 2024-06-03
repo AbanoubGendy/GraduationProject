@@ -1,0 +1,57 @@
+﻿@model IEnumerable<UserViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row justify-content-center align-items-center mt-4">
+    <form asp-action="Index" class="row col-8 offset-1">
+        <div class="col-8">
+            <input type="text" class="form-control" name="SearchByName" placeholder="Search By Name">
+        </div>
+        <div class="col-4">
+            <button type="submit" class="btn btn-success">Search</button>
+        </div>
+    </form>
+</div>
+<br>
+
+
+
+@if (Model.Count() > 0)
+{
+    <table class="mt-4 table table-striped  table-hover ">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(e => e.Name)</th>
+                <th>@Html.DisplayNameFor(e => e.Age)</th>
+                <th>@Html.DisplayNameFor(e => e.Address)</th>
+                <th>@Html.DisplayNameFor(e => e.Email)</th>
+                <th>@Html.DisplayNameFor(e => e.PhoneNumber)</th>
+                <th>Details</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Name </td>
+                    <td>@user.Age </td>
+                    <td>@user.Address </td>
+                    <td>@Html.DisplayFor(e => @user.Email)</td>
+                    <td>@user.PhoneNumber </td>
+                    <partial name="_ButtonsPartial" model="@user.Id.ToString()"></partial>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div>
+        <h3 class="alert alert-warning">There Is No users :(</h3>
+    </div>
+}
+

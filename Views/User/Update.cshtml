@@ -1,0 +1,25 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update Employee</h1>
+
+<form asp-action="Update" enctype="multipart/form-data">
+    @if(Model.ImageName is not null)
+    {
+        <img src="~/Files/Images/@Model.ImageName" width="75" class="img-fluid rounded-circle" />
+    }
+
+
+    <partial name="PartialView/inputPartial">
+
+    <button type="submit" class="btn btn-primary">Update</button> |
+    <a asp-action="Index" class="btn btn-light">Go Back</a>
+</form>
+
+@section ValidationSection {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
